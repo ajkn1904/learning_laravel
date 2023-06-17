@@ -13,52 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-<<<<<<< HEAD
-        Schema::create('courses', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('section');
-            $table->string('address');
-            $table->string('email');
-            $table->string('contact');
-=======
-<<<<<<<< HEAD:database/migrations/2023_06_11_064339_create_departments_table.php
-        Schema::create('departments', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 50);
-            $table->date('established_at');
-            $table->string('building', 50);
-========
-        Schema::create('courses', function (Blueprint $table) {
-            $table->id();
-            $table->string('email');
-            $table->string('name');
-            $table->string('address');
-            $table->string('section');
-            $table->string('contact');
->>>>>>>> 0bb92334c2000b425fdf71b2664c58feadfcd00e:database/migrations/2023_06_06_072012_create_courses_table.php
->>>>>>> 0bb92334c2000b425fdf71b2664c58feadfcd00e
-            $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-<<<<<<< HEAD
-        Schema::dropIfExists('courses');
-    }
-};
-=======
-<<<<<<<< HEAD:database/migrations/2023_06_11_064339_create_departments_table.php
-        Schema::dropIfExists('departments');
-========
-        Schema::dropIfExists('courses');
->>>>>>>> 0bb92334c2000b425fdf71b2664c58feadfcd00e:database/migrations/2023_06_06_072012_create_courses_table.php
-    }
-};
->>>>>>> 0bb92334c2000b425fdf71b2664c58feadfcd00e
+    Schema::create('courses', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('section');
+        $table->string('address');
+        $table->string('email');
+        $table->string('contact');
+        $table->timestamps();
+    });
+}
+        public function down(): void
+        {
+            Schema::dropIfExists('courses');
+        }
+    };
+    
