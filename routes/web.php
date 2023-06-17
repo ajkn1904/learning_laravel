@@ -8,10 +8,27 @@
     php artisan serve
 -->
 
-<!-- To create controller project -->
+<!-- To create controller -->
 <!-- 
-    php artisan make:controller Controller_Name
+    php artisan make:controller ControllerName(Capital)
 -->
+
+<!-- To create model -->
+<!-- 
+    php artisan make:model ModelName(Singular & Capital)
+-->
+
+<!-- To create model with migration table -->
+<!-- 
+    php artisan make:model ModelName(Singular & Capital) -m
+-->
+
+<!-- To create db table -->
+<!-- 
+    php artisan migration
+    php artisan migration:refresh (for refreshing or updating)
+-->
+
 
 
 <?php
@@ -21,8 +38,7 @@ use Illuminate\Support\Facades\Route;
 //importing controller
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\NewsController;
-
-
+use App\Http\Controllers\DepartmentController;
 
 //without controller
 Route::get('/', function () {
@@ -69,3 +85,10 @@ Route::get('/', function () {
 Route::get('/about', [AboutController::class, 'about']);
 
 Route::get('/news/{newsId}', [NewsController::class, 'news']);
+
+
+//getting data from the UI
+Route::get('/department/create', [DepartmentController::class, 'create']);
+
+//post request tor store data to the database
+Route::post('/department/store', [DepartmentController::class, 'store']);
