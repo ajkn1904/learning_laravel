@@ -37,13 +37,12 @@ use Illuminate\Support\Facades\Route;
 
 //importing controller
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\EmployeeController;
 
 //without controller
 Route::get('/', function () {
-    return view('welcome');
-});
+        return view('welcome');
+    });
 
 //without controller
 /* Route::get('/news/{newsId}', function ($newsId) {
@@ -92,3 +91,6 @@ Route::get('/department/create', [DepartmentController::class, 'create']);
 
 //post request tor store data to the database
 Route::post('/department/store', [DepartmentController::class, 'store']);
+
+Route::get('/employee/create', [EmployeeController::class, 'create']);
+Route::post('/employee/store', [EmployeeController::class, 'store']);
