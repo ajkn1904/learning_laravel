@@ -14,6 +14,7 @@
 <body>
 
     <div class="container">
+        <title>All Employees</title>
         <table class="table table-striped">
             <thead>
                 <th>Name</th>
@@ -21,8 +22,10 @@
                 <th>Department</th>
                 <th>Designation</th>
                 <th>Salary</th>
+                <th>Action</th>
             </thead>
             <tbody>
+                <!-- receiving data  -->
                 @foreach($employees as $e)
                 <tr>
                     <td>{{$e->name}}</td>
@@ -30,6 +33,9 @@
                     <td>{{$e->department}}</td>
                     <td>{{$e->designation}}</td>
                     <td>{{$e->salary}}</td>
+                    <td>
+                        <a href="{{ url('/employee/edit/'.$e->id) }}" class="btn btn-secondary">Edit</a>
+                    </td>
 
                 </tr>
                 @endforeach

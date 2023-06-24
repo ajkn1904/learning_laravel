@@ -13,12 +13,14 @@ class EmployeeController extends Controller
         return view('employee.create');
     }
 
+
+    //creating function to store all data to database
     public function store(Request $request)
     {
-        $obj = new Employee();
+        $obj = new Employee();  //creating new object
         $obj->name = $request->emp_name;
         $obj->email = $request->email;
-        $obj->birth_date = $request->joiningdate;
+        $obj->joining_date = $request->joiningdate;
         $obj->designation = $request->designation;
         $obj->salary = $request->salary;
         $obj->gender = $request->gender;
@@ -30,11 +32,39 @@ class EmployeeController extends Controller
         }
     }
 
-    public function all(){
-        // select * from employees
-        $employees = Employee::all();
-        return view('employee.all', compact('employees'));
-    }
+
     
+    //creating function to show all data from database
+    public function all()
+    {
+        // select * from employees  (once we used this query to fetch data from db)
+
+        $employees = Employee::all(); //now we are using model which is communicating with the table to make a query to fetch data from the database
+        return view('employee.all', compact('employees'));
+        //sharing data by using compact('variable_name')
+    }
+
+
+    //edit function
+    public function edit($id){
+        $employee = Employee::find($id);  //existing object
+        return view('employee.edit', compact('employee'));
+    }
+
+    
+    //update function
+    public function update(Request $request, $id){
+        $obj = Employee::find($id);  //existing object
+        $obj->name = $request->emp_name;
+        $obj->email = $request->email;
+        $obj->designation = $request->designation;
+        $obj->salary = $request->salary;
+        $obj->department = $request->department;
+        
+        if($obj->save()) {
+            return redirect('employee/all');
+        }
+    }
+
 
 }

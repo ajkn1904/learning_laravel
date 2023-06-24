@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->date('birth_date');
+            $table->date('joining_date');
             $table->string('designation');
             $table->integer('salary');
             $table->string('gender');

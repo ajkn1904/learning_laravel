@@ -96,4 +96,10 @@ Route::get('/employee/create', [EmployeeController::class, 'create']);
 Route::post('/employee/store', [EmployeeController::class, 'store']);
 
 
+
+//get route to get data from database
 Route::get('/employee/all', [EmployeeController::class, 'all']);
+
+//update request
+Route::get('/employee/edit/{id}', [EmployeeController::class, 'edit']);
+Route::post('/employee/update/{id}', [EmployeeController::class, 'update']);
