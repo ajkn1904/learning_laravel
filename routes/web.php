@@ -103,3 +103,6 @@ Route::get('/employee/all', [EmployeeController::class, 'all']);
 //update request
 Route::get('/employee/edit/{id}', [EmployeeController::class, 'edit']);
 Route::post('/employee/update/{id}', [EmployeeController::class, 'update']);
+
+//delete request
+Route::get('/employee/delete/{id}', [EmployeeController::class, 'delete']);

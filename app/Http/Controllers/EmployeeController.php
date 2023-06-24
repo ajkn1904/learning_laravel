@@ -28,7 +28,7 @@ class EmployeeController extends Controller
         $obj->department = $request->department;
 
         if($obj->save()) {
-            echo 'Successfully Inserted';
+            return redirect('employee/all');
         }
     }
 
@@ -64,6 +64,14 @@ class EmployeeController extends Controller
         if($obj->save()) {
             return redirect('employee/all');
         }
+    }
+
+
+    //delete function
+    public function delete($id){
+        if(Employee::find($id) -> delete()){
+            return redirect('employee/all');
+        } 
     }
 
 

@@ -35,6 +35,35 @@
                     <td>{{$e->salary}}</td>
                     <td>
                         <a href="{{ url('/employee/edit/'.$e->id) }}" class="btn btn-secondary">Edit</a>
+
+                        <a href="" class="btn btn-danger" data-toggle="modal"
+                            data-target="#myModal{{$e->id}}">Delete</a>
+
+
+                        <!-- Delete confirmation using modal -->
+                        <div class="modal" id="myModal{{$e->id}}">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Delete Confirmation</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        Are you sure you want to delete?<b>{{$e->name}}</b>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <a href="{{ url('/employee/delete/'.$e->id) }}" class=" btn btn-danger">Yes</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                     </td>
 
                 </tr>
