@@ -30,5 +30,11 @@ class EmployeeController extends Controller
         }
     }
 
+    public function all(){
+        // select * from employees
+        $employees = Employee::all();
+        return view('employee.all', compact('employees'));
+    }
+    
 
 }

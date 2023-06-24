@@ -94,3 +94,6 @@ Route::post('/department/store', [DepartmentController::class, 'store']);
 
 Route::get('/employee/create', [EmployeeController::class, 'create']);
 Route::post('/employee/store', [EmployeeController::class, 'store']);
+
+
+Route::get('/employee/all', [EmployeeController::class, 'all']);
